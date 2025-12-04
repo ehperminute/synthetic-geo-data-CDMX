@@ -50,7 +50,7 @@ def assign_colonias(df_students, colonias_df):
     assigned = colonias_df.sample(len(df_students), replace=True).reset_index(drop=True)
 
     df_students["colonia_id"] = assigned["colonia_id"]
-    df_students["colonia_name"] = assigned["colonia_name"]
+    df_students["colonia_name"] = assigned["colonia_name_clean"]
     df_students["alcaldia"] = assigned.get("alcaldia", None)
 
     return df_students
