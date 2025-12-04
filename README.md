@@ -41,17 +41,23 @@ The goal is to show how synthetic data can be generated, cleaned, analyzed, and 
 synthetic-geo-data/
 │
 ├── data/
-│ └── synthetic_dataset.csv
+│   ├── raw/           # colonia boundaries, alcaldía shapes
+│   ├── interim/       # merged geodata
+│   └── processed/     # generated synthetic students + tables
 │
 ├── notebooks/
-│ └── synthetic_geo_data.ipynb
+│   └── education_analytics_simulation.ipynb   # clean Colab notebook
 │
 ├── src/
-│ ├── generator.py # data generator
-│ ├── visualizations.py # map functions
-│ └── utils.py
+│   ├── generate_population.py
+│   ├── simulate_dropout.py
+│   ├── geospatial_processing.py
+│   ├── visualizations.py
+│   └── utils.py
 │
+├── requirements.txt
 └── README.md
+
 
 
 ---
