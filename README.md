@@ -38,3 +38,30 @@ The goal is to show how synthetic data can be generated, cleaned, analyzed, and 
 
 ## 📁 Repository Structure
 
+synthetic-geo-data/
+│
+├── data/
+│ └── synthetic_dataset.csv
+│
+├── notebooks/
+│ └── synthetic_geo_data.ipynb
+│
+├── src/
+│ ├── generator.py # data generator
+│ ├── visualizations.py # map functions
+│ └── utils.py
+│
+└── README.md
+
+
+---
+
+## 🚀 How to Run
+
+### Option 1 — Google Colab
+Open the notebook directly in Colab and run all cells.
+
+### Option 2 — Local (Jupyter)
+```bash
+pip install -r requirements.txt
+jupyter notebook
