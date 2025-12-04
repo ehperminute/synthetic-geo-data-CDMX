@@ -27,7 +27,7 @@ def plot_risk_map(colonias_gdf, risk_df):
         merged,
         geojson=merged.geometry.__geo_interface__,
         locations=merged.index,
-        color="ever_dropped",
+        color="dropped",
         projection="mercator",
         title="Dropout Risk by Colonia",
     )
