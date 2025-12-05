@@ -26,6 +26,7 @@ def load_colonias(geojson_path):
     gdf = gpd.read_file(geojson_path)
     gdf["colonia_name_clean"] = gdf["colonia"].apply(normalize)
     gdf["colonia_id"] = range(1, len(gdf) + 1)
+    print(gdf.head())
     return gdf[["colonia_id", "colonia_name_clean", "geometry"]]
 
 
