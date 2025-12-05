@@ -25,7 +25,7 @@ def simulate_semesters(df_students, n_semesters=8, seed=42):
             records.append({
                 "student_id": row["student_id"],
                 "semester": sem,
-                "dropped": dropped_flag,
+                "dropped": dropped,
                 "p_dropout": p_dropout,
                 "colonia_id": row["colonia_id"]
             })
