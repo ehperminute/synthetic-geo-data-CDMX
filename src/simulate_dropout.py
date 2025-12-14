@@ -2,32 +2,40 @@ import numpy as np
 import pandas as pd
 
 def simulate_semesters(df_students, n_semesters=8, seed=42):
-    np.random.seed(seed)
+    rng = np.random.default_rng(seed)
 
+    n = len(df_students)
+
+    # base dropout probability per student (vectorized)
+    p_base = (
+        0.05
+        + 0.04 * (df_students["ses_index"] < -1)
+        + 0.03 * (df_students["internet_access"] == 0)
+        + 0.03 * (df_students["modality"] == "En Línea")
+    ).to_numpy()
+
+    alive = np.ones(n, dtype=bool)
     records = []
-    for _, row in df_students.iterrows():
-        dropped = False
 
-        for sem in range(1, n_semesters + 1):
-            if dropped:
-                break
+    for sem in range(1, n_semesters + 1):
+        # only sample for students still enrolled
+        u = rng.random(n)
+        dropped = (u < p_base) & alive
 
-            p_dropout = (
-                0.05
-                + 0.04 * (row["ses_index"] < -1)
-                + 0.03 * (row["internet_access"] == 0)
-                + 0.03 * (row["modality"] == "En Línea")
-            )
+        records.append(pd.DataFrame({
+            "student_id": df_students["student_id"],
+            "semester": sem,
+            "dropped": dropped,
+            "p_dropout": p_base,
+            "colonia_id": df_students["colonia_id"]
+        }))
 
-            dropped = np.random.rand() < p_dropout
+        # update survival
+        alive &= ~dropped
 
-            records.append({
-                "student_id": row["student_id"],
-                "semester": sem,
-                "dropped": dropped,
-                "p_dropout": p_dropout,
-                "colonia_id": row["colonia_id"]
-            })
+    panel = pd.concat(records, ignore_index=True)
 
+    # remove semesters after dropout
+    panel = panel[panel.groupby("student_id")["dropped"].cumsum() <= 1]
 
-    return pd.DataFrame(records)
+    return panel
