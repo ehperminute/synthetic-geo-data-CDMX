@@ -33,7 +33,7 @@ def generate_students(colonias_df, n_students=100_000, n_semesters=8):
 
     df = pd.DataFrame(data)
     df["name"] = [fake.name() for _ in range(n_students)]
-    df = dassign_colonias()
+    df = assign_colonias(df, colonias_df)
     return df
 
 
