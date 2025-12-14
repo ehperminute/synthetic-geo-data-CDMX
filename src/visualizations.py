@@ -188,7 +188,7 @@ def plot_risk_map3(risk_full, city_name="Mexico City"):
         locations=risk_plot.index,
         color="ever_dropped",
         color_continuous_scale="YlOrRd", 
-        mapbox_style="cart-positron",  # ← THIS SHOWS ROADS!
+        mapbox_style="carto-positron",  # ← THIS SHOWS ROADS!
         zoom=11,  # Adjust zoom level (higher = more detailed)
         center={"lat": center_lat, "lon": center_lon},
         opacity=0.7,  # Make polygons slightly transparent to see roads
