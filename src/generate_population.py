@@ -15,7 +15,7 @@ from faker import Faker
 fake = Faker('es_MX')
 
 
-def generate_students(n_students=100_000, n_semesters=8):
+def generate_students(colonias_df, n_students=100_000, n_semesters=8):
     """Generate synthetic students with demographic and SES attributes."""
 
     sexes = ['F', 'M']
@@ -33,27 +33,27 @@ def generate_students(n_students=100_000, n_semesters=8):
 
     df = pd.DataFrame(data)
     df["name"] = [fake.name() for _ in range(n_students)]
-
+    df = dassign_colonias()
     return df
 
 
-def assign_colonias(df_students, colonias_df):
+def assign_colonias(students_df, colonias_df):
 
-    df_students["colonia_id"] = np.random.Generator.choice(
+    students_df["colonia_id"] = np.random.Generator.choice(
         colonias_df["colonia_id"].values,
-        size=len(df_students),
+        size=len(students_df),
         replace=True,
         p=colonias_df["pop_weight"].values
     )
 
     # now just merge metadata
-    df_students = df_students.merge(
+    students_df = students_df.merge(
         colonias_df,
         on="colonia_id",
         how="left"
     )
 
-    return df_students
+    return students_df
 
 
 if __name__ == "__main__":
