@@ -40,7 +40,7 @@ def generate_students(colonias_df, n_students=100_000, n_semesters=8):
 def assign_colonias(students_df, colonias_df):
 
     students_df["colonia_id"] = np.random.Generator.choice(
-        colonias_df["colonia_id"].values,
+        colonias_df["colonia_id"],
         size=len(students_df),
         replace=True,
         p=colonias_df["pop_weight"].values
