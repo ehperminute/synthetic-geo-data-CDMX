@@ -21,7 +21,8 @@ def load_colonias(geojson_path):
     gdf = gdf[["ID", "NOMUT", "NOMDT", "geometry"]]
     colnames = ["colonia_id", "colonia_name", "alcaldia", "geometry"]
     gdf.columns = colnames
-    return calculate_area_density(gdf)
+    gdf = calculate_area_density(gdf)
+    return gdf
 
 def calculate_area_density(gdf):
     gdf_proj = gdf.to_crs(epsg=32614)  # UTM zone for CDMX
