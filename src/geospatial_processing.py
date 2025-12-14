@@ -21,7 +21,18 @@ def load_colonias(geojson_path):
     gdf = gdf[["ID", "NOMUT", "NOMDT", "geometry"]]
     colnames = ["colonia_id", "colonia_name", "alcaldia", "geometry"]
     gdf.columns = colnames
-    return gdf
+    return calculate_area_density(gdf)
+
+def calculate_area_density(gdf):
+    gdf_proj = gdf.to_crs(epsg=32614)  # UTM zone for CDMX
+
+    # 🔹 area-based population proxy
+    gdf_proj["area_km2"] = gdf_proj.geometry.area / 1e6
+    gdf_proj["pop_weight"] = (1 / gdf_proj["area_km2"]) ** 0.5
+    gdf_proj["pop_weight"] /= gdf_proj["pop_weight"].sum()
+
+    #🔹 back to lat/lon for plotting
+    return gdf_proj.to_crs(epsg=4326)
 
 
 def aggregate_risk(panel_df, students_df, colonias_df):
