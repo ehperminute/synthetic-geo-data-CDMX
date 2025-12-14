@@ -48,7 +48,7 @@ def aggregate_risk(panel_df, students_df, colonias_df):
 
     # 3) Compute average risk per colonia
     risk_df = merged.groupby("colonia_id")["ever_dropped"].mean().reset_index()
-    risk_map_df = risk.merge(colonias_df, on="colonia_id")
+    risk_map_df = risk_df.merge(colonias_df, on="colonia_id")
 
 
     return risk_map_df
