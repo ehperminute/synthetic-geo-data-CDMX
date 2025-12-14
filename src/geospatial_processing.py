@@ -37,7 +37,7 @@ def calculate_area_density(gdf):
 
 
 def aggregate_risk(panel_df, students_df, colonias_df):
-    """Correct aggregation of dropout risk by colonia."""
+    """Aggregation of dropout risk by colonia."""
 
     # 1) Compute per-student dropout (0 or 1)
     student_dropout = panel_df.groupby("student_id")["dropped"].max().reset_index()
@@ -47,9 +47,9 @@ def aggregate_risk(panel_df, students_df, colonias_df):
     merged = students_df.merge(student_dropout, on="student_id", how="left")
 
     # 3) Compute average risk per colonia
-    risk = merged.groupby("colonia_id")["ever_dropped"].mean().reset_index()
+    risk_df = merged.groupby("colonia_id")["ever_dropped"].mean().reset_index()
+    risk_map_df = risk.merge(colonias_df, on="colonia_id")
 
 
-
-    return risk
+    return risk_map_df
 
