@@ -49,11 +49,7 @@ def aggregate_risk(panel_df, students_df, colonias_df):
     # 3) Compute average risk per colonia
     risk = merged.groupby("colonia_id")["ever_dropped"].mean().reset_index()
 
-    # 4) Merge with full colonia list (so holes disappear)
-    risk_full = colonias_df.merge(risk, on="colonia_id", how="left")
 
-    # colonias with no students → assign 0 (or NaN if you prefer)
-    risk_full["ever_dropped"] = risk_full["ever_dropped"].fillna(0)
 
-    return risk_full
+    return risk
 
