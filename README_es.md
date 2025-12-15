@@ -1,4 +1,4 @@
-# Simulación Analítica Educativa: Trayectorias Estudiantiles, Predicción de Abandono y Mapeo de Riesgo Geoespacial
+# Simulación Analítica Educativa: Trayectorias Estudiantiles y Mapeo de Riesgo Geoespacial
 
 **Breve**: Proyecto con datos sintéticos que genera trayectorias estudiantiles, simula riesgo de abandono, construye una pequeña base de datos relacional, ajusta un modelo interpretativo y mapea el riesgo por colonia.
 
@@ -12,9 +12,6 @@ Este repositorio demuestra un flujo reproducible que combina generación de dato
 synthetic-geo-data/
 │
 ├── data/
-│
-├── notebooks/
-│ └── education_analytics_simulation.ipynb
 │
 ├── src/
 │ ├── generate_population.py
