@@ -41,7 +41,7 @@ synthetic-geo-data/
 1. Open the notebook in Colab [CDMX synthetic dropout.ipynb](https://colab.research.google.com/drive/1sneX2ZAtxctFCfk7WDqiMGeSuMmE_BJU?usp=sharing)
 
 
-2. Run the notebook cells in order (```Runtime -> Run all``` or ```Ctrl + F9```). The notebook will:
+2. Run the notebook cells in order (`Runtime -> Run all` or `Ctrl + F9`). The notebook will:
    - reference official GeoData,
    - generate synthetic student data,
    - create a local SQLite database (in Colab environment),
@@ -69,7 +69,7 @@ No local install required when using Colab.
 - `src/simulate_dropout.py` — simulate semester-level records and dropout events.  
 - `src/geospatial_processing.py` — load GeoJSON, normalize names, compute aggregated risk by neighborhood.  
 - `src/visualizations.py` — functions to render maps and plots (Plotly/Matplotlib).  
-- `CDMX synthetic dropout.ipynb.ipynb` — one-click Colab notebook that ties everything together.  
+- `CDMX synthetic dropout.ipynb` — one-click Colab notebook that ties everything together.  
 - `requirements.txt` — minimal dependencies to run the project.
 
 ---
@@ -94,7 +94,6 @@ No local install required when using Colab.
 - Plots: observed vs predicted dropout by semester, ROC curve, top-10 high-risk students CSV.  
 - A small SQLite database with `students_raw` and `inscripciones` tables.
 
-(Images and example outputs can be added to `/notebooks/output/` or `/README_images/`.)
 
 ---
 
@@ -105,7 +104,7 @@ No local install required when using Colab.
 
 ---
 
-## 🧭 Possible extensions (good interview talking points)
+## 🧭 Possible extensions
 
 - Replace synthetic data with anonymized institutional data (if available) while maintaining privacy safeguards.  
 - Add clustering (KMeans) to identify high-risk neighborhoods by features.  
