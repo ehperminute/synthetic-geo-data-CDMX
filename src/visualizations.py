@@ -195,7 +195,7 @@ def plot_risk_map3(risk_full, city_name="Mexico City"):
         labels={"ever_dropped": "Dropout Risk Score", "NOMDT": "Alcaldia"},
         title=f"<b>Dropout Risk Map - {city_name}</b>",
         hover_name=risk_plot.NOMUT,  # Show neighborhood names
-        hover_data={"ever_dropped": ":.2f"}
+        hover_data={"ever_dropped": ":.1%", "NOMDT": True}
     )
     
     # Professional styling
