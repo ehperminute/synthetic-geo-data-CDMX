@@ -3,10 +3,12 @@ import pandas as pd
 
 def run_sql_analytics(students_df, panel_df, db_path="analytics.db"):
     conn = sqlite3.connect(db_path)
+    students_sql = students_df.drop(columns=["geometry"], errors="ignore")
+    panel_sql = panel_df.drop(columns=["geometry"], errors="ignore")
 
     # Write tables
-    students_df.to_sql("students", conn, if_exists="replace", index=False)
-    panel_df.to_sql("enrollments", conn, if_exists="replace", index=False)
+    students_sql.to_sql("students", conn, if_exists="replace", index=False)
+    panel_sql.to_sql("enrollments", conn, if_exists="replace", index=False)
 
     # 1) Dropout rate by modality
     q1 = """
