@@ -42,7 +42,7 @@ synthetic-geo-data/
 
 
 2. Run the notebook cells in order (Runtime -> Run all or Ctrl + F9). The notebook will:
-   - download or reference small GeoJSON files (or use links),
+   - reference official GeoData,
    - generate synthetic student data,
    - create a local SQLite database (in Colab environment),
    - run a logistic regression to estimate dropout risk,
