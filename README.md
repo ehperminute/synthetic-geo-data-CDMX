@@ -1,9 +1,7 @@
 # synthetic-geo-data
 # Education Analytics Simulation: Student Trajectories, Dropout Prediction & Geospatial Risk Mapping
 
-## 👇 Spanish version
 
-See [README_es.md](README_es.md) for a Spanish translation.
 
 **Short**: Synthetic data project that generates student trajectories, simulates dropout risk and maps risk by neighborhood.
 
