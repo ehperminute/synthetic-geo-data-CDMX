@@ -41,7 +41,7 @@ synthetic-geo-data/
 1. Open the notebook in Colab [dropout_mapping](https://colab.research.google.com/drive/1sneX2ZAtxctFCfk7WDqiMGeSuMmE_BJU?usp=sharing):
 
 
-2. Run the notebook cells in order. The notebook will:
+2. Run the notebook cells in order (Runtime -> Run all or Ctrl + F9). The notebook will:
    - download or reference small GeoJSON files (or use links),
    - generate synthetic student data,
    - create a local SQLite database (in Colab environment),
