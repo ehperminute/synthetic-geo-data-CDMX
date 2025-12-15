@@ -118,4 +118,4 @@ MIT License — feel free to reuse or adapt the code.
 
 ## 👇 Spanish version
 
-See README_es.md for a Spanish translation.
+See [README_es.md](README_es.md) for a Spanish translation.
