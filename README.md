@@ -57,9 +57,7 @@ No local install required when using Colab.
 
 ## What this project demonstrates
 
-- **Synthetic data generation** for longitudinal student trajectories.  
-- **Data engineering & ETL** (CSV / SQLite ingestion pipeline).  
-- **Predictive modeling** (interpretable logistic regression with diagnostics).  
+- **Synthetic data generation** for longitudinal student trajectories.   
 - **Geospatial processing** (join synthetic outcomes to real neighborhood geometries).  
 - **Visualization** (maps, model diagnostics, top-risk identification).  
 - **Reproducible notebook workflow** suitable for sharing in Colab.
