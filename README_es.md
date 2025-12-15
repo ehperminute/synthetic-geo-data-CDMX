@@ -1,8 +1,8 @@
 # Simulación Analítica Educativa: Trayectorias Estudiantiles y Mapeo de Riesgo Geoespacial
 
-**Breve**: Proyecto con datos sintéticos que genera trayectorias estudiantiles, simula riesgo de abandono, construye una pequeña base de datos relacional, ajusta un modelo interpretativo y mapea el riesgo por colonia.
+**Breve**: Proyecto con datos sintéticos que genera trayectorias estudiantiles, simula riesgo de abandono y mapea el riesgo por colonia.
 
-Este repositorio demuestra un flujo reproducible que combina generación de datos sintéticos, procesamiento geoespacial, modelado predictivo y visualización. Está diseñado para ejecutarse en **Google Colab** (no requiere instalación local) y es apropiado para mostrar habilidades relevantes a roles de analista de datos, analítica educativa o ciencia de datos aplicada.
+Este repositorio demuestra un flujo reproducible que combina generación de datos sintéticos, procesamiento geoespacial y visualización. Está diseñado para ejecutarse en **Google Colab** (no requiere instalación local).
 
 ---
 
@@ -52,7 +52,6 @@ No se requiere instalación local cuando se usa Colab.
 - `src/simulate_dropout.py` — simula registros por semestre y eventos de abandono.  
 - `src/geospatial_processing.py` — carga GeoJSON, normaliza nombres y agrega riesgo por colonia.  
 - `src/visualizations.py` — funciones para generar mapas y gráficos.  
-- `notebooks/education_analytics_simulation.ipynb` — notebook Colab que integra todo.  
 - `requirements.txt` — dependencias mínimas.
 
 ---
