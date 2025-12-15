@@ -191,10 +191,10 @@ def plot_risk_map3(risk_full, city_name="Mexico City"):
         mapbox_style="carto-positron",  # ← THIS SHOWS ROADS!
         zoom=11,  # Adjust zoom level (higher = more detailed)
         center={"lat": center_lat, "lon": center_lon},
-        opacity=0.7,  # Make polygons slightly transparent to see roads
-        labels={"ever_dropped": "Dropout Risk Score"},
+        opacity=0.8,  # Make polygons slightly transparent to see roads
+        labels={"ever_dropped": "Dropout Risk Score", "NOMDT": "Alcaldia"},
         title=f"<b>Dropout Risk Map - {city_name}</b>",
-        hover_name=risk_plot.index,  # Show neighborhood names
+        hover_name=risk_plot.NOMUT,  # Show neighborhood names
         hover_data={"ever_dropped": ":.2f"}
     )
     
