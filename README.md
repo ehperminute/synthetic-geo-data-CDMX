@@ -69,7 +69,7 @@ No local install required when using Colab.
 - `src/simulate_dropout.py` — simulate semester-level records and dropout events.  
 - `src/geospatial_processing.py` — load GeoJSON, normalize names, compute aggregated risk by neighborhood.  
 - `src/visualizations.py` — functions to render maps and plots (Plotly/Matplotlib).  
-- `notebooks/education_analytics_simulation.ipynb` — one-click Colab notebook that ties everything together.  
+- `CDMX synthetic dropout.ipynb.ipynb` — one-click Colab notebook that ties everything together.  
 - `requirements.txt` — minimal dependencies to run the project.
 
 ---
