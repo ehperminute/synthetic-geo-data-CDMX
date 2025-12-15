@@ -1,6 +1,10 @@
 # synthetic-geo-data
 # Education Analytics Simulation: Student Trajectories, Dropout Prediction & Geospatial Risk Mapping
 
+## 👇 Spanish version
+
+See [README_es.md](README_es.md) for a Spanish translation.
+
 **Short**: Synthetic data project that generates student trajectories, simulates dropout risk, builds a small relational database, fits an interpretable predictive model, and maps risk by neighborhood.
 
 This repository demonstrates a reproducible data workflow combining synthetic data generation, geospatial processing, predictive modeling, and visualization. It is designed to be run in **Google Colab** (no local installation required).
@@ -114,8 +118,3 @@ No local install required when using Colab.
 
 MIT License — feel free to reuse or adapt the code.
 
----
-
-## 👇 Spanish version
-
-See [README_es.md](README_es.md) for a Spanish translation.
