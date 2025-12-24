@@ -3,7 +3,7 @@
 
 
 
-###This project builds a synthetic, end-to-end data pipeline that generates student records, simulates semester-level outcomes, aggregates results by neighborhood, and visualizes them on a map.
+### This project builds a synthetic, end-to-end data pipeline that generates student records, simulates semester-level outcomes, aggregates results by neighborhood, and visualizes them on a map.
 
 This repository demonstrates a reproducible data workflow combining synthetic data generation, geospatial processing, predictive modeling, and visualization. It is designed to be run in **Google Colab** (no local installation required).
 
